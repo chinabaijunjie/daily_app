@@ -37,7 +37,7 @@ export default Section;
 
 const styles = StyleSheet.create({
   sectionContainer: {
-    marginTop: 32,
+    marginTop: 12,
     paddingHorizontal: 24,
   },
   sectionTitle: {

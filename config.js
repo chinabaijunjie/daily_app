@@ -1,0 +1,42 @@
+export const mockGradData = [
+  {
+    icon: 'kehu2',
+    badge: 0,
+    bgStyle: ['#1890ff', '#40a9ff', '#69c0ff'],
+    text: '模块一',
+    url: '',
+    passParams: {},
+  },
+  {
+    icon: 'shijianshenhe',
+    badge: 0,
+    bgStyle: ['#52c41a', '#73d13d', '#b7eb8f'],
+    text: '模块二',
+    url: '',
+    passParams: {},
+  },
+  {
+    icon: 'yanlian',
+    badge: 0,
+    bgStyle: ['#f0b226', '#fccf51', '#ffe07a'],
+    text: '模块三',
+    url: '',
+    passParams: {},
+  },
+  {
+    icon: 'yonghuchaxun',
+    badge: 0,
+    bgStyle: ['#e3543b', '#f07e65', '#fca992'],
+    text: '模块四',
+    url: '',
+    passParams: {},
+  },
+  {
+    icon: 'duiwujianshe',
+    badge: 0,
+    bgStyle: ['#e3543b', '#f07e65', '#fca992'],
+    text: '模块五',
+    url: '',
+    passParams: {},
+  },
+];

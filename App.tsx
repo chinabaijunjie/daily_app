@@ -7,6 +7,7 @@
 
 import React, {useState} from 'react';
 import {
+  Dimensions,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -21,8 +22,8 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import HeaderScreen from './screens/Header';
 import Section from './screens/Section';
-import {Button, Toast} from './screens/components/antdTheme';
-import Icon from './screens/components/Icon';
+import {Button, Grad, Toast} from './screens/components/antdTheme';
+import {mockGradData} from './config';
 
 function App(): JSX.Element {
   // 这个是react-native 提供的hook，可以获取当前手机是否是深色模式；
@@ -54,10 +55,7 @@ function App(): JSX.Element {
           contentInsetAdjustmentBehavior="automatic"
           style={backgroundStyle}>
           <HeaderScreen dark={isDarkMode} />
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}>
+          <View style={styles.homeCard}>
             <Section dark={isDarkMode} title="第一个">
               来吧，开始沉浸式体验吧。忘记时间 组件：StatusBar
               <Text style={styles.showOff}>
@@ -76,28 +74,36 @@ function App(): JSX.Element {
               </Text>
             </TouchableHighlight>
           </View>
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}>
+
+          <View style={styles.homeCard}>
             <Section dark={isDarkMode} title="第二个">
+              这是一个按钮组件
               <Button onPress={handleToast} title={'看我看我'} />
               <View>
                 <Text style={styles.showOff}>这个按钮</Text>
               </View>
             </Section>
           </View>
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}>
+
+          <View style={styles.homeCard}>
             <Section dark={isDarkMode} title="第三个">
-              这个是一个不可缺少的组件：Icon
+              这个是一个不可缺少的组件：Icon。
             </Section>
-            <View>
-              <Text>
-                <Icon name={'empty'} size={26} color={'#000'} />
-              </Text>
+            <View style={{paddingLeft: 24, paddingRight: 24}}>
+              <Text>搭配着Grad组件，可以做一个应用功能的入口。</Text>
+              <Text>这个组件中设置超过4个，那么就可以点击右侧的收起。如下</Text>
+            </View>
+          </View>
+          <View style={{backgroundColor: '#bcbcbc', marginBottom: 20}}>
+            <Grad data={mockGradData} title={'测试区块'} columnNum={4} />
+          </View>
+
+          <View style={styles.homeCard}>
+            <Section dark={isDarkMode} title="第四个">
+              这个是
+            </Section>
+            <View style={{paddingLeft: 24, paddingRight: 24}}>
+              <Text></Text>
             </View>
           </View>
         </ScrollView>
@@ -107,8 +113,16 @@ function App(): JSX.Element {
 }
 
 const styles = StyleSheet.create({
+  homeCard: {
+    marginBottom: 20,
+    marginLeft: 10,
+    paddingBottom: 12,
+    width: Dimensions.get('screen').width - 20,
+    backgroundColor: Colors.white,
+    borderRadius: 4,
+  },
   sectionContainer: {
-    marginTop: 32,
+    marginTop: 12,
     paddingHorizontal: 24,
   },
   sectionTitle: {
@@ -123,7 +137,7 @@ const styles = StyleSheet.create({
   highlight: {
     marginTop: 15,
     marginLeft: 20,
-    width: 100,
+    width: 140,
     height: 30,
   },
   showOff: {
