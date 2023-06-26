@@ -63,6 +63,16 @@ export const workModule2 = [
     },
   },
   {
+    icon: 'paizhao',
+    badge: 0,
+    bgStyle: ['#2f54eb', '#85a5ff', '#adc6ff'],
+    text: '相册',
+    url: 'PhotoAlbum',
+    passParams: {
+      obj: {},
+    },
+  },
+  {
     icon: 'huaban',
     badge: 0,
     bgStyle: ['#13c2c2', '#5cdbd3', '#b5f5ec'],

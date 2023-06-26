@@ -8,6 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import {Navigation} from 'react-native-navigation';
 import Icon from '../../Icon/';
 import Toast from '../Toast';
 
@@ -20,12 +21,13 @@ export default class Grad extends React.Component {
   }
 
   funcNav = _el => {
-    if (this.props.navigation && _el.url) {
-      if (_el.passParams) {
-        this.props.navigation.navigate(_el.url, {..._el.passParams});
-      } else {
-        this.props.navigation.navigate(_el.url);
-      }
+    if (_el.url) {
+      Navigation.push(this.props.componentId, {
+        component: {
+          name: _el.url,
+          passProps: _el.passParams ? _el.passParams : {},
+        },
+      });
     } else {
       Toast({msg: '哎呀呀，还没有配置路由呢'});
     }

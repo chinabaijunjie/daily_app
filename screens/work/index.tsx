@@ -22,6 +22,7 @@ const WorkScreen = (props: {componentId: string}) => {
             data={workModule1}
             title={'演示模块'}
             columnNum={4}
+            componentId={props.componentId}
             navigation={Navigation}
           />
         </WingBlank>
@@ -30,6 +31,7 @@ const WorkScreen = (props: {componentId: string}) => {
             data={workModule2}
             title={'功能模块'}
             columnNum={4}
+            componentId={props.componentId}
             navigation={Navigation}
           />
         </WingBlank>

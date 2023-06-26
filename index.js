@@ -8,6 +8,7 @@ import App from './App';
 import HomeScreen from './screens/home';
 import WorkScreen from './screens/work';
 import SettingsScreen from './screens/setting';
+import PhotoAlbumScreen from './screens/photo-album';
 // import SweepYardScreen from './screens/components/sweepYard';// 扫码二维码
 
 const LoginScreen = () => {
@@ -76,6 +77,8 @@ Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
 Navigation.registerComponent('Home', () => HomeScreen);
 Navigation.registerComponent('Work', () => WorkScreen);
 Navigation.registerComponent('Settings', () => SettingsScreen);
+Navigation.registerComponent('PhotoAlbum', () => PhotoAlbumScreen);
+
 // Navigation.registerComponent('SweepYard', () => SweepYardScreen);
 
 Navigation.events().registerAppLaunchedListener(async () => {
