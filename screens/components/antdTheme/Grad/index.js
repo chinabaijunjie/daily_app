@@ -20,7 +20,7 @@ export default class Grad extends React.Component {
   }
 
   funcNav = _el => {
-    if (this.props.navigation) {
+    if (this.props.navigation && _el.url) {
       if (_el.passParams) {
         this.props.navigation.navigate(_el.url, {..._el.passParams});
       } else {

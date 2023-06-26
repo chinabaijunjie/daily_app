@@ -1,12 +1,15 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import Icon from './Icon';
 
 const NotData = props => {
-  const {iconCode, describeTest} = props;
+  const {iconCode, size = 20, color, describeTest} = props;
   return (
     <View style={styles.notdata}>
       <View style={styles.iconbox}>
-        <Text style={styles.icons}>{iconCode}</Text>
+        <Text style={styles.icons}>
+          <Icon name={iconCode} size={size} color={color} />
+        </Text>
       </View>
       <View style={styles.iconbox}>
         <Text style={styles.describe}>{describeTest}</Text>
@@ -22,13 +25,10 @@ const styles = StyleSheet.create({
   },
   iconbox: {
     textAlign: 'center',
-    flex: 1,
   },
   icons: {
-    textAlign: 'center',
-    fontFamily: 'iconfont',
     fontSize: 80,
-    color: '#ccc',
+    textAlign: 'center',
   },
   describe: {
     textAlign: 'center',

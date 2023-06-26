@@ -51,10 +51,6 @@ export const commonStyle = StyleSheet.create({
     width: Dimensions.get('window').width,
     flex: 1,
   },
-  temporaryContainer: {
-    marginTop: 50,
-  },
-
   // modalTitle
   modalTitle: {
     height: 40,
